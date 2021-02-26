@@ -5,13 +5,11 @@ namespace sistema_brancario_dio.Classes
 {
     public class Conta
     {
-		// Atributos
         private TipoConta TipoConta { get; set; }
         private double Saldo { get; set; }
         private double Credito { get; set; }
         private string Nome { get; set; }
 
-        // Métodos
         public Conta(TipoConta tipoConta, double saldo, double credito, string nome) {
             this.TipoConta = tipoConta;
             this.Saldo = saldo;
@@ -20,7 +18,6 @@ namespace sistema_brancario_dio.Classes
         }
 
         public bool Sacar(double valorSaque) {
-            // Validação de saldo suficiente
             if (this.Saldo - valorSaque < (this.Credito * -1)) {
                 Console.WriteLine("Saldo insuficiente!");
                 return false;
